@@ -1,0 +1,7 @@
+{% if page.id %}
+<li {% if page.navbar == 'About' %}class="active"{% endif %}><a href="/about">About</a></li>
+{% else %}
+<li {% if page.navbar == 'About' %}class="active"{% endif %}><a href="/about">About</a></li>
+<li {% if page.navbar == 'Publications' %}class="active"{% endif %}><a href="/publications">Publications</a></li>
+<li {% if page.navbar == 'teaching' %}class="active"{% endif %}><a href="/teaching">Teaching</a></li>
+{% endif %}
