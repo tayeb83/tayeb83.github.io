@@ -2,7 +2,7 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: blank # the website title (if blank, full name will be used instead)
+title: Tayeb Merabti # the website title
 first_name: Tayeb
 middle_name:
 last_name: Merabti
@@ -13,7 +13,7 @@ footer_text: >
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
   Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
 
-icon: 🔥 # the emoji used as the favicon
+icon: 💼 # the emoji used as the favicon
 url:  # the base hostname & protocol for your site
 baseurl: / # the subpath of your site, e.g. /blog/
 last_updated: false # set to true if you want to display last updated in the footer
@@ -64,8 +64,8 @@ panelbear_analytics: XXXXXXXXX # panelbear analytics site ID
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: tayeb merabti website # your blog must have a name for it to show up in the nav bar
-blog_description: a simple whitespace theme for academics
+blog_name: Insights # your blog name in navbar
+blog_description: Interopérabilité santé, terminologies médicales et FHIR
 permalink: /blog/:year/:title/
 
 # Pagination
@@ -165,7 +165,7 @@ enable_mansory:             true
 enable_math:                true
 enable_tooltips:            false
 enable_darkmode:            true
-show_social_icons:          false
+show_social_icons:          true
 
 # -----------------------------------------------------------------------------
 # Library versions
