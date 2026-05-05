@@ -9,7 +9,7 @@ baseurl: "/"
 repository: "tayeb83/tayeb83.github.io"
 
 theme: minimal-mistakes-jekyll
-minimal_mistakes_skin: "air"
+minimal_mistakes_skin: "mint"
 
 # Build settings
 markdown: kramdown
@@ -37,18 +37,23 @@ keep_files:
 
 # Author
 author:
-  name: "Tayeb Merabti"
+  name: "Tayeb Merabti, PhD"
   avatar: "/assets/images/prof_pic.jpg"
-  bio: "Responsable Plateforme Terminologie & Interopérabilité Santé · VIDAL"
+  bio: >-
+    Responsable Plateforme Terminologie & Interopérabilité Santé · **VIDAL**<br>
+    SNOMED CT · FHIR · UMLS · Web Sémantique
   location: "Paris, France"
   email: "tayeb.merabti@gmail.com"
   links:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/tayeb-merabti-phd-39871834"
-    - label: "Twitter"
+    - label: "Twitter / X"
       icon: "fab fa-fw fa-twitter"
       url: "https://twitter.com/tayebM"
+    - label: "ORCID"
+      icon: "fab fa-fw fa-orcid"
+      url: "https://orcid.org/0000-0003-3464-264X"
 
 # Defaults
 defaults:
