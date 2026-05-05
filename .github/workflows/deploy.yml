@@ -37,15 +37,6 @@ jobs:
         else
           echo "DEPLOY_BRANCH=gh-pages" >> $GITHUB_OUTPUT
         fi
-    - name: Patch jekyll-scholar for Ruby 3.2
-      run: |
-        bundle exec ruby -e "
-          path = Gem.find_files('jekyll/scholar/utilities.rb').first
-          abort 'utilities.rb not found' unless path
-          src = File.read(path)
-          File.write(path, src.gsub('File.exists?', 'File.exist?'))
-          puts 'Patched: ' + path
-        "
     - name: Deploy website
       run:  yes | bin/deploy --verbose ${{ steps.setup.outputs.NO_PUSH }}
                     --src ${{ steps.setup.outputs.SRC_BRANCH }} 
