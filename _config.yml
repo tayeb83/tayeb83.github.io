@@ -123,7 +123,6 @@ keep_files:
 
 # Plug-ins
 plugins:
-  - file_exists_compat
   - jekyll-email-protect
   - jekyll-github-metadata
   - jekyll-paginate-v2
