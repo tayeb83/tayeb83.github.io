@@ -1,12 +1,8 @@
 source 'https://rubygems.org'
 
-# jekyll-scholar 5.16 uses File.exists? which was removed in Ruby 3.2.
-# This shim runs at Bundler load time (before Jekyll's safe mode blocks _plugins/).
-class File
-  class << self
-    alias_method :exists?, :exist? unless respond_to?(:exists?)
-  end
-end
+# jekyll-scholar 5.16 calls File.exists? which was removed in Ruby 3.2.
+# bundle exec uses Kernel.load so this Gemfile code runs in the same process as Jekyll.
+File.define_singleton_method(:exists?) { |f| File.exist?(f) } unless File.respond_to?(:exists?)
 
 group :jekyll_plugins do
     gem 'github-pages'
