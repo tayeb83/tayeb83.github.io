@@ -1,38 +1,35 @@
 ---
-layout: page
+layout: single
+title: "Enseignement"
+author_profile: true
 permalink: /teaching/
-title: teaching
-description:
-nav: true
 ---
 
-# Information Retrieval
+## Recherche d'Information (IR)
 
-- Introduction to Information Retrieval.
-- Search engine architecture:
-	- web crawler
-	- basic text analysis techniques
-	- inverted index
-	- query processing
-	- search result interface
-- IR models:
-	- Boolean.
-	- Vector space.
-- Evaluation in Information Retrieval
-- Relevance feedback and query expansion.
-- Link analysis.
-- Search Applications: Question answering, Social Search.
+Cours dispensés sur les fondamentaux de la recherche d'information et les systèmes de recherche documentaire appliqués au domaine de la santé.
 
+### Programme
 
-# Semantic Web
- 
-- Introduction to semantic Web
-- Semantic Web Basic Architecture:
-	- RDF
-	- RDF Schema
-	- SPARQL
-Knowledge representation:
-	- Ontology
-	- Logic
-	- OWL
-- Semantic application: Ontological Engineering , Semantic Web and linking data
+- **Introduction à la RI** — Historique, enjeux, domaines d'application
+- **Architecture des moteurs de recherche** — Indexation, ranking, crawling
+- **Modèles de RI** — Modèle booléen, espace vectoriel (TF-IDF), modèles probabilistes
+- **Évaluation** — Précision, rappel, F-mesure, TREC
+- **Retour de pertinence** — Rocchio, expansion de requêtes
+- **Analyse de liens** — PageRank, HITS
+- **Applications santé** — Recherche dans les dossiers médicaux, PubMed, CISMeF
+
+---
+
+## Web Sémantique
+
+Introduction aux technologies du Web Sémantique et leur application à la représentation des connaissances biomédicales.
+
+### Programme
+
+- **RDF & RDF Schema** — Triplets, prédicats, classes, propriétés
+- **SPARQL** — Requêtes sur les graphes de connaissances
+- **Représentation des connaissances** — Logique de description, raisonnement
+- **Ontologies** — Définition, conception, évaluation
+- **OWL** — Web Ontology Language, axiomes, inférence
+- **Applications** — DBpedia, Wikidata, ontologies biomédicales (SNOMED CT, Gene Ontology)

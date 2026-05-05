@@ -1,0 +1,7 @@
+main:
+  - title: "À propos"
+    url: /
+  - title: "Publications"
+    url: /publications/
+  - title: "Enseignement"
+    url: /teaching/
