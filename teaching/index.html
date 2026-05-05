@@ -19,7 +19,7 @@
 <meta name="description" content="Expert en terminologies médicales et interopérabilité santé — FHIR · SNOMED CT · UMLS · Semantic Web">
 
 
-  <meta name="author" content="Tayeb Merabti">
+  <meta name="author" content="Tayeb Merabti, PhD">
   
 
 
@@ -77,11 +77,176 @@
 
 
 
-    <!-- start custom head snippets -->
+    <style>
+/* ===== SKILL BADGES ===== */
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.8em;
+  margin: 0.2em 0.1em;
+  border-radius: 20px;
+  font-size: 0.78em;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.badge-term {
+  background-color: #e3f2fd;
+  color: #0d47a1;
+  border: 1px solid #90caf9;
+}
+.badge-fhir {
+  background-color: #e8f5e9;
+  color: #1b5e20;
+  border: 1px solid #a5d6a7;
+}
+.badge-sem {
+  background-color: #fce4ec;
+  color: #880e4f;
+  border: 1px solid #f48fb1;
+}
+.badge-tech {
+  background-color: #fff3e0;
+  color: #bf360c;
+  border: 1px solid #ffcc80;
+}
 
-<!-- insert favicons. use https://realfavicongenerator.net/ -->
+/* ===== HERO INTRO ===== */
+.hero-intro {
+  background: linear-gradient(135deg, #1565c0 0%, #00838f 100%);
+  color: white;
+  padding: 1.6em 2em;
+  border-radius: 8px;
+  margin-bottom: 2em;
+  font-size: 1.05em;
+  line-height: 1.75;
+}
+.hero-intro strong {
+  color: #b2ebf2;
+}
 
-<!-- end custom head snippets -->
+/* ===== EXPERIENCE TIMELINE ===== */
+.timeline {
+  position: relative;
+  padding: 0;
+  list-style: none;
+}
+.exp-item {
+  position: relative;
+  border-left: 3px solid #4db6ac;
+  padding: 0 0 2em 1.8em;
+  margin: 0;
+}
+.exp-item:last-child {
+  border-left-color: transparent;
+  padding-bottom: 0;
+}
+.exp-dot {
+  position: absolute;
+  left: -8px;
+  top: 5px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #26a69a;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px #26a69a;
+}
+.exp-date {
+  font-size: 0.8em;
+  color: #78909c;
+  font-weight: 700;
+  margin-bottom: 0.15em;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.exp-role {
+  font-size: 1.05em;
+  font-weight: 700;
+  color: #1a237e;
+  margin: 0 0 0.1em;
+}
+.exp-company {
+  font-size: 0.9em;
+  color: #546e7a;
+  margin-bottom: 0.6em;
+  font-weight: 600;
+}
+.exp-desc {
+  font-size: 0.92em;
+  color: #37474f;
+  margin-bottom: 0.6em;
+  line-height: 1.65;
+}
+
+/* ===== PROJECT CARDS ===== */
+.project-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.4em 1.6em;
+  margin-bottom: 1.5em;
+  border-top: 4px solid #26a69a;
+  background: #fafafa;
+}
+.project-card h3 {
+  margin-top: 0;
+  color: #1a237e;
+}
+.project-org {
+  font-size: 0.85em;
+  color: #78909c;
+  font-style: italic;
+  margin-bottom: 0.8em;
+}
+
+/* ===== EDUCATION ===== */
+.edu-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1em;
+  margin-bottom: 1.4em;
+}
+.edu-icon {
+  font-size: 1.4em;
+  line-height: 1.2;
+  flex-shrink: 0;
+}
+.edu-body h4 {
+  margin: 0 0 0.15em;
+  color: #263238;
+}
+.edu-body p {
+  margin: 0;
+  color: #546e7a;
+  font-size: 0.9em;
+  line-height: 1.55;
+}
+
+/* ===== SECTION DIVIDERS ===== */
+.section-label {
+  font-size: 0.72em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #26a69a;
+  margin-bottom: 0.3em;
+}
+
+/* ===== AWARDS ===== */
+.award-item {
+  background: #fffde7;
+  border-left: 4px solid #f9a825;
+  padding: 0.8em 1.2em;
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 1em;
+}
+.award-item p { margin: 0; font-size: 0.92em; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .hero-intro { padding: 1.1em 1.3em; font-size: 0.95em; }
+  .badge { font-size: 0.72em; }
+}
+</style>
 
   </head>
 
@@ -113,6 +278,12 @@
                 
                 
               >À propos</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/projects/"
+                
+                
+              >Projets</a>
             </li><li class="masthead__menu-item">
               <a
                 href="/publications/"
@@ -160,18 +331,18 @@
   
     <div class="author__avatar">
       <a href="/">
-        <img src="/assets/images/prof_pic.jpg" alt="Tayeb Merabti" itemprop="image" class="u-photo">
+        <img src="/assets/images/prof_pic.jpg" alt="Tayeb Merabti, PhD" itemprop="image" class="u-photo">
       </a>
     </div>
   
 
   <div class="author__content">
     <h3 class="author__name p-name" itemprop="name">
-      <a class="u-url" rel="me" href="/" itemprop="url">Tayeb Merabti</a>
+      <a class="u-url" rel="me" href="/" itemprop="url">Tayeb Merabti, PhD</a>
     </h3>
     
       <div class="author__bio p-note" itemprop="description">
-        <p>Responsable Plateforme Terminologie &amp; Interopérabilité Santé · VIDAL</p>
+        <p>Responsable Plateforme Terminologie &amp; Interopérabilité Santé · <strong>VIDAL</strong><br /> SNOMED CT · FHIR · UMLS · Web Sémantique</p>
 
       </div>
     
@@ -193,7 +364,11 @@
           
         
           
-            <li><a href="https://twitter.com/tayebM" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+            <li><a href="https://twitter.com/tayebM" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span class="label">Twitter / X</span></a></li>
+          
+        
+          
+            <li><a href="https://orcid.org/0000-0003-3464-264X" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-orcid" aria-hidden="true"></i><span class="label">ORCID</span></a></li>
           
         
       

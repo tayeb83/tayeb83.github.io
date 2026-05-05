@@ -19,7 +19,7 @@
 <meta name="description" content="Expert en terminologies médicales et interopérabilité santé — FHIR · SNOMED CT · UMLS · Semantic Web">
 
 
-  <meta name="author" content="Tayeb Merabti">
+  <meta name="author" content="Tayeb Merabti, PhD">
   
 
 
@@ -87,15 +87,180 @@
 
 
 
-    <!-- start custom head snippets -->
+    <style>
+/* ===== SKILL BADGES ===== */
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.8em;
+  margin: 0.2em 0.1em;
+  border-radius: 20px;
+  font-size: 0.78em;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.badge-term {
+  background-color: #e3f2fd;
+  color: #0d47a1;
+  border: 1px solid #90caf9;
+}
+.badge-fhir {
+  background-color: #e8f5e9;
+  color: #1b5e20;
+  border: 1px solid #a5d6a7;
+}
+.badge-sem {
+  background-color: #fce4ec;
+  color: #880e4f;
+  border: 1px solid #f48fb1;
+}
+.badge-tech {
+  background-color: #fff3e0;
+  color: #bf360c;
+  border: 1px solid #ffcc80;
+}
 
-<!-- insert favicons. use https://realfavicongenerator.net/ -->
+/* ===== HERO INTRO ===== */
+.hero-intro {
+  background: linear-gradient(135deg, #1565c0 0%, #00838f 100%);
+  color: white;
+  padding: 1.6em 2em;
+  border-radius: 8px;
+  margin-bottom: 2em;
+  font-size: 1.05em;
+  line-height: 1.75;
+}
+.hero-intro strong {
+  color: #b2ebf2;
+}
 
-<!-- end custom head snippets -->
+/* ===== EXPERIENCE TIMELINE ===== */
+.timeline {
+  position: relative;
+  padding: 0;
+  list-style: none;
+}
+.exp-item {
+  position: relative;
+  border-left: 3px solid #4db6ac;
+  padding: 0 0 2em 1.8em;
+  margin: 0;
+}
+.exp-item:last-child {
+  border-left-color: transparent;
+  padding-bottom: 0;
+}
+.exp-dot {
+  position: absolute;
+  left: -8px;
+  top: 5px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #26a69a;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px #26a69a;
+}
+.exp-date {
+  font-size: 0.8em;
+  color: #78909c;
+  font-weight: 700;
+  margin-bottom: 0.15em;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.exp-role {
+  font-size: 1.05em;
+  font-weight: 700;
+  color: #1a237e;
+  margin: 0 0 0.1em;
+}
+.exp-company {
+  font-size: 0.9em;
+  color: #546e7a;
+  margin-bottom: 0.6em;
+  font-weight: 600;
+}
+.exp-desc {
+  font-size: 0.92em;
+  color: #37474f;
+  margin-bottom: 0.6em;
+  line-height: 1.65;
+}
+
+/* ===== PROJECT CARDS ===== */
+.project-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.4em 1.6em;
+  margin-bottom: 1.5em;
+  border-top: 4px solid #26a69a;
+  background: #fafafa;
+}
+.project-card h3 {
+  margin-top: 0;
+  color: #1a237e;
+}
+.project-org {
+  font-size: 0.85em;
+  color: #78909c;
+  font-style: italic;
+  margin-bottom: 0.8em;
+}
+
+/* ===== EDUCATION ===== */
+.edu-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1em;
+  margin-bottom: 1.4em;
+}
+.edu-icon {
+  font-size: 1.4em;
+  line-height: 1.2;
+  flex-shrink: 0;
+}
+.edu-body h4 {
+  margin: 0 0 0.15em;
+  color: #263238;
+}
+.edu-body p {
+  margin: 0;
+  color: #546e7a;
+  font-size: 0.9em;
+  line-height: 1.55;
+}
+
+/* ===== SECTION DIVIDERS ===== */
+.section-label {
+  font-size: 0.72em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #26a69a;
+  margin-bottom: 0.3em;
+}
+
+/* ===== AWARDS ===== */
+.award-item {
+  background: #fffde7;
+  border-left: 4px solid #f9a825;
+  padding: 0.8em 1.2em;
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 1em;
+}
+.award-item p { margin: 0; font-size: 0.92em; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .hero-intro { padding: 1.1em 1.3em; font-size: 0.95em; }
+  .badge { font-size: 0.72em; }
+}
+</style>
 
   </head>
 
-  <body class="layout--single" dir="ltr">
+  <body class="layout--single wide" dir="ltr">
     
 <nav class="skip-links" aria-label="Skip links">
   <ul>
@@ -123,6 +288,12 @@
                 
                 
               >À propos</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/projects/"
+                
+                
+              >Projets</a>
             </li><li class="masthead__menu-item">
               <a
                 href="/publications/"
@@ -170,18 +341,18 @@
   
     <div class="author__avatar">
       <a href="/">
-        <img src="/assets/images/prof_pic.jpg" alt="Tayeb Merabti" itemprop="image" class="u-photo">
+        <img src="/assets/images/prof_pic.jpg" alt="Tayeb Merabti, PhD" itemprop="image" class="u-photo">
       </a>
     </div>
   
 
   <div class="author__content">
     <h3 class="author__name p-name" itemprop="name">
-      <a class="u-url" rel="me" href="/" itemprop="url">Tayeb Merabti</a>
+      <a class="u-url" rel="me" href="/" itemprop="url">Tayeb Merabti, PhD</a>
     </h3>
     
       <div class="author__bio p-note" itemprop="description">
-        <p>Responsable Plateforme Terminologie &amp; Interopérabilité Santé · VIDAL</p>
+        <p>Responsable Plateforme Terminologie &amp; Interopérabilité Santé · <strong>VIDAL</strong><br /> SNOMED CT · FHIR · UMLS · Web Sémantique</p>
 
       </div>
     
@@ -203,7 +374,11 @@
           
         
           
-            <li><a href="https://twitter.com/tayebM" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+            <li><a href="https://twitter.com/tayebM" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span class="label">Twitter / X</span></a></li>
+          
+        
+          
+            <li><a href="https://orcid.org/0000-0003-3464-264X" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-orcid" aria-hidden="true"></i><span class="label">ORCID</span></a></li>
           
         
       
@@ -302,87 +477,157 @@
 
       <section class="page__content e-content" itemprop="text">
         
-        <p>Expert en terminologies médicales et interopérabilité des systèmes de santé, je suis actuellement <strong>Responsable Plateforme Terminologie &amp; Interopérabilité</strong> chez <a href="https://www.vidal.fr">VIDAL</a>, Paris.</p>
+        <div class="hero-intro">
+<strong>Responsable Plateforme Terminologie &amp; Interopérabilité Santé</strong> — Expert en terminologies médicales, standards FHIR/HL7 et architectures sémantiques pour les systèmes de santé numériques. Docteur en informatique, spécialisé dans l'alignement, la gouvernance et la diffusion sécurisée des données de santé à l'échelle nationale et internationale.
+</div>
 
-<p>Mes travaux portent sur le développement de plateformes d’échange sémantique de données de santé, l’alignement de terminologies cliniques (SNOMED CT, UMLS, CIM-10/11) et l’implémentation de standards d’interopérabilité (FHIR/HL7, OntoServer).</p>
+<h2 id="domaines-dexpertise">Domaines d’expertise</h2>
 
-<hr />
+<p class="section-label">Terminologies médicales</p>
+<p><span class="badge badge-term">SNOMED CT</span>
+<span class="badge badge-term">UMLS</span>
+<span class="badge badge-term">CIM-10 / CIM-11</span>
+<span class="badge badge-term">ICD-11</span>
+<span class="badge badge-term">MeSH</span>
+<span class="badge badge-term">MedDRA</span></p>
 
-<h2 id="compétences-clés">Compétences clés</h2>
+<p class="section-label" style="margin-top:0.8em">Interopérabilité &amp; Standards</p>
+<p><span class="badge badge-fhir">FHIR HL7</span>
+<span class="badge badge-fhir">OntoServer</span>
+<span class="badge badge-fhir">Health Terminologies API</span></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Domaine</th>
-      <th>Technologies</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Terminologies médicales</td>
-      <td>SNOMED CT · UMLS · CIM-10/11 · ICD-11 · MeSH · MedDRA</td>
-    </tr>
-    <tr>
-      <td>Interopérabilité</td>
-      <td>FHIR (HL7) · OntoServer · OWL/RDF/SPARQL · Ontologies</td>
-    </tr>
-    <tr>
-      <td>Web Sémantique</td>
-      <td>RDF · RDFS · OWL · SPARQL · Linked Data</td>
-    </tr>
-    <tr>
-      <td>Ingénierie</td>
-      <td>NLP · Python · Java · PostgreSQL · MongoDB</td>
-    </tr>
-  </tbody>
-</table>
+<p class="section-label" style="margin-top:0.8em">Web Sémantique &amp; Ontologies</p>
+<p><span class="badge badge-sem">OWL</span>
+<span class="badge badge-sem">RDF / RDFS</span>
+<span class="badge badge-sem">SPARQL</span>
+<span class="badge badge-sem">Linked Data</span>
+<span class="badge badge-sem">Ontologies biomédicales</span></p>
+
+<p class="section-label" style="margin-top:0.8em">Ingénierie &amp; NLP</p>
+<p><span class="badge badge-tech">NLP</span>
+<span class="badge badge-tech">Python</span>
+<span class="badge badge-tech">Java</span>
+<span class="badge badge-tech">PostgreSQL</span>
+<span class="badge badge-tech">MongoDB</span></p>
 
 <hr />
 
-<h2 id="expérience-professionnelle">Expérience professionnelle</h2>
+<h2 id="parcours-professionnel">Parcours professionnel</h2>
 
-<p><strong>Responsable Plateforme Terminologie &amp; Interopérabilité Santé</strong><br />
-VIDAL · Paris — <em>mai 2024 – présent</em></p>
+<div class="exp-item">
+<div class="exp-dot"></div>
+<div class="exp-date">Mai 2024 – Aujourd'hui &nbsp;·&nbsp; 2 ans</div>
+<div class="exp-role">Responsable Plateforme Terminologie &amp; Interopérabilité</div>
+<div class="exp-company">VIDAL &nbsp;·&nbsp; Paris (Hybride)</div>
+<div class="exp-desc">
+Pilotage de la plateforme de terminologies médicales. Intégration et gestion des grands référentiels (SNOMED CT, UMLS, OntoServer), déploiement d'architectures FHIR et web sémantique. Gouvernance, réconciliation et diffusion sécurisée des données cliniques. Coordination de partenariats pluridisciplinaires et internationaux.
+</div>
+<span class="badge badge-fhir">FHIR · OntoServer</span>
+<span class="badge badge-term">SNOMED CT · UMLS · CIM-11</span>
+<span class="badge badge-sem">OWL · RDF · SPARQL</span>
+</div>
 
-<p>Développement et gestion de la plateforme de terminologies médicales, standardisation des données pour l’interopérabilité des systèmes de santé.</p>
+<div class="exp-item">
+<div class="exp-dot"></div>
+<div class="exp-date">Janvier 2021 – Mai 2024 &nbsp;·&nbsp; 3 ans 5 mois</div>
+<div class="exp-role">Responsable Projet Terminologies de Santé</div>
+<div class="exp-company">Agence du Numérique en Santé (ANS) &nbsp;·&nbsp; Paris</div>
+<div class="exp-desc">
+Responsable du <strong>Serveur Multi-Terminologies (SMT)</strong>, point d'accès national unique aux terminologies, classifications et nomenclatures médicales. Coordination des acteurs publics et industriels autour des standards de codification clinique. Workflows de standardisation terminologique et implémentation OntoServer/FHIR.
+</div>
+<span class="badge badge-fhir">FHIR · OntoServer</span>
+<span class="badge badge-term">CIM-10 · CIM-11 · SNOMED CT</span>
+<span class="badge badge-sem">Ontologies</span>
+</div>
 
-<hr />
+<div class="exp-item">
+<div class="exp-dot"></div>
+<div class="exp-date">Septembre 2017 – Décembre 2020 &nbsp;·&nbsp; 3 ans 4 mois</div>
+<div class="exp-role">Ingénieur de Recherche Senior</div>
+<div class="exp-company">Inria &nbsp;·&nbsp; Paris</div>
+<div class="exp-desc">
+Projet <strong>ConnectionLens</strong> : conception et développement d'un outil d'intégration de données hétérogènes (relationnelles, RDF, JSON, XML) en graphe virtuel unique. Application au journalisme de données : exploration et découverte de connexions via NLP sur sources complexes.
+</div>
+<span class="badge badge-sem">RDF · OWL · SPARQL</span>
+<span class="badge badge-tech">NLP · Java · PostgreSQL</span>
+</div>
 
-<p><strong>Chef de Projet Terminologies Santé</strong><br />
-Agence du Numérique en Santé (ANS) · Paris — <em>janv. 2021 – mai 2024</em></p>
+<div class="exp-item">
+<div class="exp-dot"></div>
+<div class="exp-date">Mai 2016 – Juillet 2017 &nbsp;·&nbsp; 1 an 3 mois</div>
+<div class="exp-role">Maître de Conférences</div>
+<div class="exp-company">Université Al-Imam Muhammad Ibn Saud &nbsp;·&nbsp; Riyad</div>
+<div class="exp-desc">
+Enseignement et recherche en informatique : Recherche d'information, Web Sémantique, Édition électronique.
+</div>
+<span class="badge badge-sem">Web Sémantique</span>
+<span class="badge badge-tech">Recherche d'information</span>
+</div>
 
-<p>Gestion de la plateforme <strong>SMT</strong> (Serveur Multi-Terminologies), référentiel national de terminologies de santé. Coordination des acteurs publics et industriels autour des standards de codification clinique.</p>
-
-<hr />
-
-<p><strong>Ingénieur de Recherche Senior</strong><br />
-Inria · Paris — <em>sept. 2017 – déc. 2020</em></p>
-
-<p>Projet <strong>ConnectionLens</strong> : intégration de données hétérogènes (structurées, semi-structurées, non structurées) par graphes de connaissances pour le journalisme de données et la recherche.</p>
-
-<hr />
-
-<p><strong>Maître de Conférences</strong><br />
-Université Al-Imam Muhammad Ibn Saud · Arabie Saoudite — <em>mai 2016 – juil. 2017</em></p>
-
-<p>Enseignement et recherche en informatique médicale, systèmes d’information de santé et terminologies.</p>
-
-<hr />
-
-<p><strong>Ingénieur R&amp;D</strong><br />
-CHU de Rouen · Rouen — <em>oct. 2010 – sept. 2016</em></p>
-
-<p>Alignement de terminologies biomédicales (MeSH, MedDRA, SNOMED CT). Développement des systèmes <strong>HeTOP</strong> (Health Terminology/Ontology Portal) et <strong>InfoRoute</strong> (algorithme de recherche contextuelle CISMeF).</p>
+<div class="exp-item">
+<div class="exp-dot"></div>
+<div class="exp-date">Octobre 2010 – Septembre 2016 &nbsp;·&nbsp; 6 ans</div>
+<div class="exp-role">Ingénieur R&amp;D — Informatique Biomédicale</div>
+<div class="exp-company">CHU de Rouen &nbsp;·&nbsp; Département d'Informatique Biomédicale</div>
+<div class="exp-desc">
+Développement de <strong>HeTOP</strong> (Health Terminology/Ontology Portal) pour l'alignement et la visualisation entre terminologies biomédicales (MeSH, MedDRA, SNOMED CT, WHO). Conception d'<strong>InfoRoute</strong>, algorithme de recherche contextuelle multi-sites (CISMeF). Traduction automatique de terminologies médicales anglais/français via UMLS.
+</div>
+<span class="badge badge-term">MeSH · MedDRA · SNOMED CT</span>
+<span class="badge badge-tech">Java · NLP · UMLS · J2EE</span>
+</div>
 
 <hr />
 
 <h2 id="formation">Formation</h2>
 
-<p>🎓 <strong>Doctorat en Informatique</strong> — Université de Rouen Normandie <em>(2007 – 2010)</em></p>
+<div class="edu-item">
+<div class="edu-icon">🎓</div>
+<div class="edu-body">
+<h4>Doctorat en Informatique</h4>
+<p>Université de Rouen Normandie &nbsp;·&nbsp; 2007 – 2010<br />
+<em>Méthodes et outils pour l'alignement entre terminologies biomédicales</em></p>
+</div>
+</div>
 
-<p>🎓 <strong>Master en Informatique</strong> — Université de Rouen Normandie <em>(2006 – 2007)</em></p>
+<div class="edu-item">
+<div class="edu-icon">🎓</div>
+<div class="edu-body">
+<h4>Master en Informatique</h4>
+<p>Université de Rouen Normandie &nbsp;·&nbsp; 2006 – 2007<br />
+<em>Distances sémantiques et lexicales</em></p>
+</div>
+</div>
 
-<p>📜 <strong>Certification HL7 FHIR</strong> <em>(2022)</em></p>
+<div class="edu-item">
+<div class="edu-icon">📜</div>
+<div class="edu-body">
+<h4>FHIR Fundamentals — Certification HL7</h4>
+<p>HL7 &nbsp;·&nbsp; Octobre 2022</p>
+</div>
+</div>
+
+<div class="edu-item">
+<div class="edu-icon">📜</div>
+<div class="edu-body">
+<h4>MongoDB — Code School</h4>
+<p>Bases de données NoSQL orientées document</p>
+</div>
+</div>
+
+<hr />
+
+<h2 id="distinction">Distinction</h2>
+
+<div class="award-item">
+<p>🏆 <strong>Distinguished Paper Award — AMIA 2010</strong><br />
+<em>A twofold strategy for translating a medical terminology into French.</em></p>
+</div>
+
+<hr />
+
+<h2 id="langues">Langues</h2>
+
+<p>🇫🇷 <strong>Français</strong> — Bilingue   ·   🇬🇧 <strong>Anglais</strong> — Professionnel complet   ·   🇸🇦 <strong>Arabe</strong> — Langue natale</p>
 
         
       </section>
