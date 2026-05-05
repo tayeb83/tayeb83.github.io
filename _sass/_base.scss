@@ -627,3 +627,53 @@ html.transition *:after {
   transition: all 750ms !important;
   transition-delay: 0 !important;
 }
+
+// Professional homepage polish
+.post-header {
+  margin-bottom: 1.25rem;
+}
+
+h2 {
+  font-size: 1.35rem;
+  margin-top: 1.9rem;
+  margin-bottom: 0.8rem;
+  letter-spacing: -0.01em;
+}
+
+hr, .post-content hr {
+  border-top: 1px solid var(--global-border-color, #e5e7eb);
+}
+
+.timeline-content,
+.edu-item {
+  border-radius: 10px;
+}
+
+.timeline-content p,
+.edu-item {
+  font-size: 0.9rem;
+}
+
+.skills-section {
+  gap: 1rem;
+}
+
+.skill-tag {
+  border-radius: 8px;
+  font-size: 0.76rem;
+  padding: 0.25rem 0.55rem;
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    padding-left: 1rem;
+  }
+
+  .timeline-item {
+    padding-left: 0.9rem;
+  }
+
+  .timeline-content {
+    padding: 0.85rem 1rem;
+  }
+}
