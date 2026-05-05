@@ -39,8 +39,9 @@ jobs:
         fi
     - name: Patch jekyll-scholar for Ruby 3.2
       run: |
-        find vendor/bundle -name "utilities.rb" -path "*/jekyll-scholar*" \
-          -exec sed -i 's/File\.exists?/File.exist?/g' {} +
+        UTILS="$(bundle show jekyll-scholar)/lib/jekyll/scholar/utilities.rb"
+        sed -i 's/File\.exists?/File.exist?/g' "$UTILS"
+        echo "Patched $UTILS"
     - name: Deploy website
       run:  yes | bin/deploy --verbose ${{ steps.setup.outputs.NO_PUSH }}
                     --src ${{ steps.setup.outputs.SRC_BRANCH }} 
