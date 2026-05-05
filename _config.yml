@@ -3,11 +3,11 @@
 # -----------------------------------------------------------------------------
 
 title: blank # the website title (if blank, full name will be used instead)
-first_name: Merabti
-middle_name: 
-last_name: Tayeb
+first_name: Tayeb
+middle_name:
+last_name: Merabti
 email: tayeb.merabti@gmail.com
-description:
+description: "Health Terminologies & Interoperability Expert — FHIR · SNOMED CT · UMLS · Semantic Web"
 footer_text: >
   Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
@@ -44,7 +44,7 @@ og_image: # The site-wide (default for all links) Open Graph preview image
 
 github_username: # your GitHub user name
 twitter_username: tayebM # your Twitter handle
-linkedin_username: https://www.linkedin.com/in/tayeb-merabti-phd-39871834 # your LinkedIn user name
+linkedin_username: tayeb-merabti-phd-39871834 # your LinkedIn user name
 scholar_userid: # your Google Scholar ID
 orcid_id: # your ORCID ID
 medium_username: # your Medium username

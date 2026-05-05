@@ -39,14 +39,25 @@ a, table.table a {
 // Profile
 
 .profile {
-  margin-left: 1rem;
+  margin-left: 1.5rem;
   width: 100%;
+  text-align: center;
+
+  .profile-img {
+    border: 3px solid var(--global-theme-color);
+    box-shadow: 0 4px 20px rgba(3, 105, 161, 0.15);
+    transition: box-shadow 0.3s ease;
+    &:hover {
+      box-shadow: 0 6px 28px rgba(3, 105, 161, 0.25);
+    }
+  }
 
   .address {
-    margin-bottom: 5px;
-    margin-top: 5px;
-    font-family: monospace;
-    font-size: 1.2rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.25rem;
+    font-size: 0.85rem;
+    color: $grey-color;
+    line-height: 1.6;
     p {
       display: inline-block;
       margin: 0;
@@ -56,11 +67,189 @@ a, table.table a {
 
 @media (min-width: 576px) {
   .profile {
-    width: 30%;
+    width: 28%;
     .address {
       p { display: block; }
     }
   }
+}
+
+// Lead bio
+.lead-bio {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--global-text-color);
+  margin-bottom: 1.5rem;
+}
+
+// Post subtitle (role/title under name)
+.post-subtitle {
+  font-size: 1rem;
+  color: var(--global-theme-color);
+  font-weight: 500;
+  margin-top: -0.5rem;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.01em;
+}
+
+// Skills section
+.skills-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.skill-category {
+  flex: 1 1 200px;
+  h4 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: $grey-color;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.skill-tag {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  background: var(--global-card-bg, #f0f9ff);
+  border: 1px solid var(--global-border-color, #bae6fd);
+  color: var(--global-text-color);
+  transition: all 0.2s ease;
+
+  &.primary {
+    background: var(--global-theme-color);
+    border-color: var(--global-theme-color);
+    color: #ffffff;
+  }
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+}
+
+// Timeline
+.timeline {
+  position: relative;
+  padding-left: 1.5rem;
+  margin: 1rem 0 1.5rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0.35rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--global-theme-color), var(--global-border-color, #e2e8f0));
+  }
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 1.75rem;
+  padding-left: 1.25rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -1.15rem;
+  top: 0.35rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--global-theme-color);
+  border: 2px solid var(--global-bg-color);
+  box-shadow: 0 0 0 2px var(--global-theme-color);
+}
+
+.timeline-content {
+  background: var(--global-card-bg, #f8fafc);
+  border: 1px solid var(--global-border-color, #e2e8f0);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  transition: box-shadow 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 3px 12px rgba(3, 105, 161, 0.1);
+  }
+
+  h4.timeline-role {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--global-text-color);
+    margin: 0.25rem 0 0.5rem;
+  }
+
+  p {
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: $grey-color;
+    margin: 0;
+  }
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.timeline-org {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--global-theme-color);
+}
+
+.timeline-period {
+  font-size: 0.75rem;
+  color: $grey-color;
+  white-space: nowrap;
+}
+
+// Education section
+.education-section {
+  margin: 1rem 0 1.5rem;
+}
+
+.edu-item {
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+  border-left: 3px solid var(--global-theme-color);
+  background: var(--global-card-bg, #f8fafc);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.9rem;
+  line-height: 1.65;
+
+  strong { color: var(--global-text-color); }
+  small { color: var(--global-theme-color); font-weight: 500; }
+  em { color: $grey-color; }
+}
+
+.edu-year {
+  float: right;
+  font-size: 0.78rem;
+  color: $grey-color;
+  font-weight: 400;
 }
 
 .post-description {
@@ -79,9 +268,9 @@ a, table.table a {
 // Navbar customization
 
 .navbar {
-  box-shadow: none;
-  border-bottom: 1px solid $grey-color-light;
-  opacity: 0.95;
+  box-shadow: 0 1px 8px rgba(3, 105, 161, 0.08);
+  border-bottom: 1px solid var(--global-border-color, #e2e8f0);
+  opacity: 0.97;
   background-color: var(--global-bg-color);
 }
 .navbar.navbar-light {
@@ -169,17 +358,27 @@ a, table.table a {
 
 .social {
   text-align: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--global-border-color, #e2e8f0);
+
   .contact-icon {
-    font-size: 4rem;
+    font-size: 2.25rem;
     a {
       color: var(--global-icon-color);
+      margin: 0 0.4rem;
+      transition: color 0.2s ease, transform 0.2s ease;
+      display: inline-block;
       &:hover {
         color: var(--global-theme-color);
+        transform: translateY(-2px);
       }
     }
   }
   .contact-note {
     font-size: 0.8rem;
+    margin-top: 0.5rem;
+    color: $grey-color;
   }
 }
 
