@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 group :jekyll_plugins do
     gem 'github-pages'
+    gem 'bibtex-ruby', '4.4.6'
     gem 'jekyll'
     gem 'jekyll-email-protect'
     gem 'jekyll-github-metadata'
