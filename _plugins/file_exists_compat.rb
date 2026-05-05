@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-# Compatibility shim for gems still calling File.exists? under Ruby 3.2+.
-class File
-  class << self
-    alias_method :exists?, :exist? unless method_defined?(:exists?)
-  end
-end
+# Compatibility shim: File.exists? and Dir.exists? were removed in Ruby 3.2.
+File.singleton_class.send(:alias_method, :exists?, :exist?) unless File.respond_to?(:exists?)
+Dir.singleton_class.send(:alias_method, :exists?, :exist?) unless Dir.respond_to?(:exists?)

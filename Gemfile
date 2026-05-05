@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 group :jekyll_plugins do
     gem 'jekyll', '~> 3.10'
-    gem 'bibtex-ruby', '4.4.6'
+    gem 'bibtex-ruby'
     gem 'jekyll-email-protect'
     gem 'jekyll-github-metadata'
     gem 'jekyll-paginate-v2'
