@@ -41,6 +41,53 @@ classes: wide
 
 ---
 
+## Blog
+
+<div id="blog-section">
+  <p id="blog-loading" class="blog-loading">Chargement des derniers articles…</p>
+  <div id="blog-posts" class="blog-cards-grid" style="display:none"></div>
+  <div class="blog-cta">
+    <a href="https://tmerabti.me/dtmblog/" class="btn btn--primary btn--large" target="_blank" rel="noopener noreferrer">Voir tous les articles →</a>
+  </div>
+</div>
+
+<script>
+(function () {
+  var rssUrl = 'https://tmerabti.me/dtmblog/feed/';
+  var apiUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rssUrl) + '&count=3';
+
+  fetch(apiUrl)
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      document.getElementById('blog-loading').style.display = 'none';
+      if (data.status !== 'ok' || !data.items || !data.items.length) return;
+      var html = '';
+      data.items.forEach(function (item) {
+        var d = new Date(item.pubDate);
+        var date = isNaN(d) ? '' : d.toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' });
+        var raw = item.description || item.content || '';
+        var excerpt = raw.replace(/<[^>]+>/g, '').trim().substring(0, 180);
+        if (excerpt.length === 180) excerpt += '…';
+        var title = item.title || '';
+        var link = item.link || '#';
+        html += '<div class="blog-card">' +
+          (date ? '<div class="blog-card-date">' + date + '</div>' : '') +
+          '<h3 class="blog-card-title"><a href="' + link + '" target="_blank" rel="noopener noreferrer">' + title + '</a></h3>' +
+          (excerpt ? '<p class="blog-card-excerpt">' + excerpt + '</p>' : '') +
+          '</div>';
+      });
+      var container = document.getElementById('blog-posts');
+      container.innerHTML = html;
+      container.style.display = 'grid';
+    })
+    .catch(function () {
+      document.getElementById('blog-loading').style.display = 'none';
+    });
+})();
+</script>
+
+---
+
 ## Parcours professionnel
 
 <div class="exp-item">

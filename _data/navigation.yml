@@ -7,3 +7,5 @@ main:
     url: /publications/
   - title: "Enseignement"
     url: /teaching/
+  - title: "Blog"
+    url: "https://tmerabti.me/dtmblog/"
